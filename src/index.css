@@ -8,35 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Spotify-inspired dark theme */
+    --background: 0 0% 7%;            /* #121212 */
+    --foreground: 0 0% 100%;          /* #ffffff */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 9%;                  /* #181818 */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 12%;              /* #1f1f1f */
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 141 73% 48%;           /* #1ed760 Spotify green */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 12%;            /* #1f1f1f */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;     /* #b3b3b3 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 354 86% 70%;       /* #f3727f */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 30%;               /* #4d4d4d */
+    --input: 0 0% 12%;
+    --ring: 141 73% 48%;
 
     --radius: 0.5rem;
+
+    /* Spotify-specific tokens */
+    --surface-base: 0 0% 7%;          /* #121212 */
+    --surface-1: 0 0% 9%;             /* #181818 */
+    --surface-2: 0 0% 12%;            /* #1f1f1f */
+    --surface-3: 0 0% 15%;            /* #252525 */
+    --text-silver: 0 0% 70%;          /* #b3b3b3 */
+    --spotify-green: 141 73% 48%;     /* #1ed760 */
+    --spotify-green-deep: 141 76% 42%;/* #1db954 */
+
+    --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-medium: 0 8px 8px rgba(0, 0, 0, 0.3);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +114,33 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .text-silver {
+    color: hsl(var(--text-silver));
+  }
+  .bg-surface-base { background-color: hsl(var(--surface-base)); }
+  .bg-surface-1 { background-color: hsl(var(--surface-1)); }
+  .bg-surface-2 { background-color: hsl(var(--surface-2)); }
+  .bg-surface-3 { background-color: hsl(var(--surface-3)); }
+
+  .shadow-heavy { box-shadow: var(--shadow-heavy); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+
+  .btn-uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .hover-lift {
+    transition: background-color 0.2s ease, transform 0.2s ease;
   }
 }
