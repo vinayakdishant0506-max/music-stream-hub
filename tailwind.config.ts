@@ -23,6 +23,17 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        "spotify-green": {
+          DEFAULT: "hsl(var(--spotify-green))",
+          deep: "hsl(var(--spotify-green-deep))",
+        },
+        surface: {
+          base: "hsl(var(--surface-base))",
+          1: "hsl(var(--surface-1))",
+          2: "hsl(var(--surface-2))",
+          3: "hsl(var(--surface-3))",
+        },
+        silver: "hsl(var(--text-silver))",
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
