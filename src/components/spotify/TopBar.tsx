@@ -2,6 +2,7 @@ import { ChevronLeft, ChevronRight, Search, X } from "lucide-react";
 import { NotificationsPopover } from "./NotificationsPopover";
 import { FriendActivityPopover } from "./FriendActivityPopover";
 import { AccountMenu } from "./AccountMenu";
+import { ConnectSpotifyButton } from "./ConnectSpotifyButton";
 
 type Props = {
   view: string;
@@ -51,9 +52,7 @@ export const TopBar = ({ view, query, onQueryChange, onFocusSearch, onBack, onFo
       )}
 
       <div className="flex items-center gap-2 ml-auto">
-        <button className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 text-silver hover:text-foreground text-xs font-bold">
-          <span>Explore Premium</span>
-        </button>
+        <ConnectSpotifyButton />
         <NotificationsPopover />
         <FriendActivityPopover />
         <AccountMenu />
