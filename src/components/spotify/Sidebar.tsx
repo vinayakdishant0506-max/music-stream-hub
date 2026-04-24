@@ -10,6 +10,7 @@ export const Sidebar = ({ active, onNavigate }: Props) => {
   const navItems = [
     { key: "home", label: "Home", icon: Home },
     { key: "search", label: "Search", icon: Search },
+    { key: "library", label: "Your Library", icon: Library },
   ];
 
   return (
