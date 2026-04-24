@@ -3,6 +3,7 @@ import { Sidebar } from "@/components/spotify/Sidebar";
 import { TopBar } from "@/components/spotify/TopBar";
 import { MainContent } from "@/components/spotify/MainContent";
 import { SearchView } from "@/components/spotify/SearchView";
+import { LibraryView } from "@/components/spotify/LibraryView";
 import { Player } from "@/components/spotify/Player";
 import { tracks, type Track } from "@/data/library";
 
@@ -68,6 +69,8 @@ const Index = () => {
           <div className="overflow-y-auto flex-1 scrollbar-hide">
             {active === "search" ? (
               <SearchView query={query} onPlayTrack={playTrack} />
+            ) : active === "library" ? (
+              <LibraryView />
             ) : (
               <MainContent onPlayTrack={playTrack} />
             )}
