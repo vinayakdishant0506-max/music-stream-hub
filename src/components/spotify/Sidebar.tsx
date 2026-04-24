@@ -46,7 +46,7 @@ export const Sidebar = ({ active, onNavigate }: Props) => {
         </div>
 
         {/* Filter pills */}
-        <div className="px-4 pb-3 flex gap-2 overflow-x-auto scrollbar-hide shrink-0">
+        <div className="px-4 pb-3 gap-2 overflow-x-auto scrollbar-hide shrink-0 flex items-start justify-center">
           {["Playlists", "Artists", "Albums"].map((f) => (
             <button
               key={f}
