@@ -1,21 +1,25 @@
+import { useState } from "react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { SignInDialog } from "./SignInDialog";
 
 export const AccountMenu = () => {
   const { user, signOut } = useAuth();
-  const navigate = useNavigate();
+  const [signInOpen, setSignInOpen] = useState(false);
   const initial = (user?.user_metadata?.display_name ?? user?.email ?? "L").toString().charAt(0).toUpperCase();
 
   if (!user) {
     return (
-      <button
-        onClick={() => navigate("/auth")}
-        className="px-3 py-1.5 rounded-full bg-foreground text-background text-xs font-bold hover:scale-105 transition-transform"
-      >
-        Sign in
-      </button>
+      <>
+        <button
+          onClick={() => setSignInOpen(true)}
+          className="px-3 py-1.5 rounded-full bg-foreground text-background text-xs font-bold hover:scale-105 transition-transform"
+        >
+          Sign in
+        </button>
+        <SignInDialog open={signInOpen} onOpenChange={setSignInOpen} />
+      </>
     );
   }
 
